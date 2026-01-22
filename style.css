@@ -1,124 +1,246 @@
-/* Style général pour la page */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #ffffff; /* Fond blanc épuré */
-    color: #333; /* Texte sombre */
-    line-height: 1.6;
+header {
     text-align: center;
-    transition: background-color 0.3s, color 0.3s; /* Transition fluide entre les modes */
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #667eea;
 }
 
-/* Mode sombre */
-body.dark-mode {
-    background-color: #1e1e2f; /* Fond bleu nuit */
-    color: #e0e0e0; /* Texte gris clair */
+body.dark-mode header {
+    border-bottom-color: #ffcc00;
 }
 
-/* Style du conteneur global */
-.container {
-    max-width: 800px; /* Limite la largeur totale de la page */
-    margin: 0 auto; /* Centre le contenu */
-    padding: 20px;
-    border: 2px solid #ccc; /* Cadre gris léger autour du conteneur */
-    border-radius: 10px;
-    background-color: #f9f9f9; /* Fond gris clair */
-}
-
-body.dark-mode .container {
-    border-color: #555; /* Cadre gris foncé pour le mode sombre */
-    background-color: #2b2b2b; /* Fond sombre */
-}
-
-/* Style du titre */
 h1 {
-    font-size: 2.5em;
-    margin: 20px 0;
-    color: #0056b3; /* Bleu saturé pour le mode clair */
-    transition: color 0.3s;
-    border: 3px solid #0056b3; /* Cadre autour du titre */
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #e6f0ff; /* Fond bleu très clair */
-    display: inline-block; /* Limite la largeur du cadre au contenu */
+    font-size: 3em;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    animation: slideDown 0.6s ease;
 }
 
 body.dark-mode h1 {
-    color: #ffcc00; /* Jaune vif pour le mode sombre */
-    border-color: #ffcc00; /* Cadre jaune */
-    background-color: #333333; /* Fond sombre */
+    background: linear-gradient(135deg, #ffcc00 0%, #ff6b6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-/* Style des paragraphes */
-p {
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subtitle {
+    color: #666;
     font-size: 1.2em;
-    margin: 20px auto;
-    max-width: 600px;
+    font-style: italic;
+}
+
+body.dark-mode .subtitle {
+    color: #aaa;
+}
+
+.card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    border-left: 5px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .card {
+    background: #2b2b3d;
+    border-left-color: #ffcc00;
+}
+
+.card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+body.dark-mode .card h2 {
+    color: #ffcc00;
+}
+
+#currentDate {
+    font-size: 1.1em;
+    color: #333;
     padding: 15px;
-    border: 2px solid #444; /* Cadre autour des paragraphes */
-    border-radius: 5px;
-    background-color: #f9f9f9; /* Fond gris très clair */
+    background: linear-gradient(135deg, #e0f7fa 0%, #e1f5fe 100%);
+    border-radius: 10px;
+    text-align: center;
 }
 
-body.dark-mode p {
-    color: #d3d3d3;
-    border-color: #666; /* Cadre gris foncé */
-    background-color: #2b2b2b; /* Fond sombre */
+body.dark-mode #currentDate {
+    color: #e0e0e0;
+    background: linear-gradient(135deg, #2d3561 0%, #1f2937 100%);
 }
 
-/* Boutons */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
 button {
-    background-color: #ffa500;
-    color: #fff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
     font-size: 1em;
-    padding: 10px 20px;
-    border: 2px solid #ff7f50; /* Cadre autour des boutons */
-    border-radius: 5px;
+    font-weight: 600;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
     cursor: pointer;
-    margin: 10px;
-    transition: background-color 0.3s, transform 0.2s, border-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
 button:hover {
-    background-color: #ff7f50;
-    border-color: #ffa500; /* Change la couleur du cadre au survol */
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 body.dark-mode button {
-    background-color: #444;
-    color: #ffcc00;
-    border-color: #555; /* Cadre autour des boutons en mode sombre */
+    background: linear-gradient(135deg, #ffcc00 0%, #ff6b6b 100%);
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
 }
 
 body.dark-mode button:hover {
-    background-color: #555;
-    border-color: #666;
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
 }
 
-/* Chronomètre */
 #chronometer {
-    margin-top: 30px;
-    display: inline-block; /* Limite la largeur du cadre au contenu */
-    padding: 15px;
-    border: 2px solid #006400; /* Cadre autour du chronomètre */
-    border-radius: 10px;
-    background-color: #f0fff0; /* Fond vert clair */
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 15px;
+    margin: 20px 0;
 }
 
 body.dark-mode #chronometer {
-    border-color: #32cd32; /* Cadre vert clair */
-    background-color: #2b3b2b; /* Fond vert sombre */
+    background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
 }
 
 #time {
-    font-size: 2em;
+    font-size: 3em;
+    font-weight: bold;
+    color: #2e7d32;
+    font-family: 'Courier New', monospace;
     display: block;
-    margin: 10px 0;
-    color: #006400;
+    margin: 15px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 body.dark-mode #time {
-    color: #32cd32;
+    color: #81c784;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .stat-item {
+    background: #2b2b3d;
+}
+
+.stat-value {
+    font-size: 2em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+body.dark-mode .stat-value {
+    color: #ffcc00;
+}
+
+.stat-label {
+    color: #666;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+body.dark-mode .stat-label {
+    color: #aaa;
+}
+
+.quote {
+    font-style: italic;
+    color: #555;
+    padding: 20px;
+    border-left: 4px solid #667eea;
+    background: #f5f5f5;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+body.dark-mode .quote {
+    background: #252535;
+    color: #ccc;
+    border-left-color: #ffcc00;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #e0e0e0;
+    color: #666;
+}
+
+body.dark-mode footer {
+    border-top-color: #444;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    #time {
+        font-size: 2em;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
 }
