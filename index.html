@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Personnel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ Mon Site Personnel ✨</h1>
+            <p class="subtitle">Bienvenue sur ma page interactive</p>
+        </header>
+
+        <div class="card">
+            <h2>📅 Date et Heure</h2>
+            <p id="currentDate">Chargement...</p>
+        </div>
+
+        <div class="card">
+            <h2>⏱️ Chronomètre</h2>
+            <div id="chronometer">
+                <span id="time">00:00:00</span>
+                <div class="controls">
+                    <button id="pauseChronometer">⏸️ Pause</button>
+                    <button id="resetChronometer">🔄 Réinitialiser</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📊 Statistiques de visite</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="visitCount">0</div>
+                    <div class="stat-label">Visites aujourd'hui</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="timeOnSite">0s</div>
+                    <div class="stat-label">Temps sur le site</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="clicks">0</div>
+                    <div class="stat-label">Clics effectués</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💭 Citation du jour</h2>
+            <div class="quote" id="quote">
+                "La seule façon de faire du bon travail est d'aimer ce que vous faites." - Steve Jobs
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="darkModeToggle">🌙 Mode Sombre</button>
+            <button id="changeQuote">🔄 Nouvelle Citation</button>
+        </div>
+
+        <footer>
+            <p>Créé avec ❤️ | © 2026</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
