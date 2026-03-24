@@ -1,0 +1,124 @@
+/* Style général pour la page */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #ffffff; /* Fond blanc épuré */
+    color: #333; /* Texte sombre */
+    line-height: 1.6;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; /* Transition fluide entre les modes */
+}
+
+/* Mode sombre */
+body.dark-mode {
+    background-color: #1e1e2f; /* Fond bleu nuit */
+    color: #e0e0e0; /* Texte gris clair */
+}
+
+/* Style du conteneur global */
+.container {
+    max-width: 800px; /* Limite la largeur totale de la page */
+    margin: 0 auto; /* Centre le contenu */
+    padding: 20px;
+    border: 2px solid #ccc; /* Cadre gris léger autour du conteneur */
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Fond gris clair */
+}
+
+body.dark-mode .container {
+    border-color: #555; /* Cadre gris foncé pour le mode sombre */
+    background-color: #2b2b2b; /* Fond sombre */
+}
+
+/* Style du titre */
+h1 {
+    font-size: 2.5em;
+    margin: 20px 0;
+    color: #0056b3; /* Bleu saturé pour le mode clair */
+    transition: color 0.3s;
+    border: 3px solid #0056b3; /* Cadre autour du titre */
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #e6f0ff; /* Fond bleu très clair */
+    display: inline-block; /* Limite la largeur du cadre au contenu */
+}
+
+body.dark-mode h1 {
+    color: #ffcc00; /* Jaune vif pour le mode sombre */
+    border-color: #ffcc00; /* Cadre jaune */
+    background-color: #333333; /* Fond sombre */
+}
+
+/* Style des paragraphes */
+p {
+    font-size: 1.2em;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 15px;
+    border: 2px solid #444; /* Cadre autour des paragraphes */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Fond gris très clair */
+}
+
+body.dark-mode p {
+    color: #d3d3d3;
+    border-color: #666; /* Cadre gris foncé */
+    background-color: #2b2b2b; /* Fond sombre */
+}
+
+/* Boutons */
+button {
+    background-color: #ffa500;
+    color: #fff;
+    font-size: 1em;
+    padding: 10px 20px;
+    border: 2px solid #ff7f50; /* Cadre autour des boutons */
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.2s, border-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff7f50;
+    border-color: #ffa500; /* Change la couleur du cadre au survol */
+    transform: scale(1.05);
+}
+
+body.dark-mode button {
+    background-color: #444;
+    color: #ffcc00;
+    border-color: #555; /* Cadre autour des boutons en mode sombre */
+}
+
+body.dark-mode button:hover {
+    background-color: #555;
+    border-color: #666;
+}
+
+/* Chronomètre */
+#chronometer {
+    margin-top: 30px;
+    display: inline-block; /* Limite la largeur du cadre au contenu */
+    padding: 15px;
+    border: 2px solid #006400; /* Cadre autour du chronomètre */
+    border-radius: 10px;
+    background-color: #f0fff0; /* Fond vert clair */
+}
+
+body.dark-mode #chronometer {
+    border-color: #32cd32; /* Cadre vert clair */
+    background-color: #2b3b2b; /* Fond vert sombre */
+}
+
+#time {
+    font-size: 2em;
+    display: block;
+    margin: 10px 0;
+    color: #006400;
+}
+
+body.dark-mode #time {
+    color: #32cd32;
+}
